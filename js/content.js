@@ -135,13 +135,9 @@ window.SITE_CONTENT = {
     "color2": "#c8264f",
     "items": [
       {
-        "title": "CheesySS Tool",
-        "text": "CheesySS tool is a tool that has a lot of other tools combined one of the tools i use that is in CHeesySS tool is MeowModAnalyzer."
-      },
-      {
         "title": "MeowModAnalyzer",
         "text": "MeowModAnalyzer is a analyzer that checks file size, strings and where its downloaded from to see if a mod has a injection."
-      }
+      },
       {
         "title": "GersBes Download Checker",
         "text": "A powersehll script I made which checks download location which can be used if a hack client was downloaded from their own website."
