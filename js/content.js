@@ -140,7 +140,7 @@ window.SITE_CONTENT = {
       },
       {
         "title": "GersBes Download Checker",
-        "text": "A powersehll script I made which checks download location which can be used if a hack client was downloaded from their own website."
+        "text": "A powersehll script I made which checks download location Example: meteor client: https://meteorclient.com"
       }
     ]
   },
