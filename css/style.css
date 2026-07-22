@@ -289,6 +289,7 @@ section{ padding:90px 0; position:relative; }
   background:linear-gradient(140deg, color-mix(in srgb, var(--accent) 8%, transparent), transparent 50%);
   opacity:0;
   transition:opacity .35s ease;
+  pointer-events:none;
 }
 .card:hover{
   transform:translateY(-6px);
@@ -297,7 +298,7 @@ section{ padding:90px 0; position:relative; }
 }
 .card:hover::before{ opacity:1; }
 .card h3{ margin:0 0 10px; font-size:1.15rem; font-weight:700; }
-.card p{ margin:0; color:var(--text-dim); font-size:.94rem; line-height:1.6; }
+.card p{ margin:0; color:var(--text-dim); font-size:.94rem; line-height:1.6; overflow-wrap:break-word; word-break:break-word; }
 .card .card-link{
   display:inline-flex; align-items:center; gap:6px;
   margin-top:16px; font-size:.85rem; font-weight:700; color:var(--accent);
@@ -312,7 +313,8 @@ section{ padding:90px 0; position:relative; }
   flex-shrink:0;
   background:var(--bg-2);
 }
-.server-info h3{ margin:0 0 4px; }
+.server-info{ min-width:0; }
+.server-info h3{ margin:0 0 4px; overflow-wrap:break-word; word-break:break-word; }
 .server-address{
   display:inline-block;
   font-family:'Consolas', monospace;
