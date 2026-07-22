@@ -128,15 +128,25 @@ window.SITE_CONTENT = {
     ],
   },
 
-  ssing: {
-    pageTitle: "SSing",
-    pageIntro: "I specialize in deep-dive screensharing to keep gameplay fair. I utilize the CheesySS tool and run a strict, mandatory 10-step protocol on every single inspection. By checking memory strings and system directories, I don't stop until I find the truth—even if the client is injected or hidden.",
-    color1: "#ff6b7a",
-    color2: "#c8264f",
-    items: [
-      { title: "CheesySS Tool", text: "CheesySS tool is a tool that has a lot of other tools combined one of the tools i use that is in CHeesySS tool is MeowModAnalyzer." },
-      { title: "MeowModAnalyzer", text: "MeowModAnalyzer is a analyzer that checks file size, strings and where its downloaded from to see if a mod has a injection." },
-    ],
+  "ssing": {
+    "pageTitle": "SSing",
+    "pageIntro": "I specialize in deep-dive screensharing to keep gameplay fair. I utilize the CheesySS tool and run a strict, mandatory 10-step protocol on every single inspection. By checking memory strings and system directories, I don't stop until I find the truth—even if the client is injected or hidden.",
+    "color1": "#ff6b7a",
+    "color2": "#c8264f",
+    "items": [
+      {
+        "title": "CheesySS Tool",
+        "text": "CheesySS tool is a tool that has a lot of other tools combined one of the tools i use that is in CHeesySS tool is MeowModAnalyzer."
+      },
+      {
+        "title": "MeowModAnalyzer",
+        "text": "MeowModAnalyzer is a analyzer that checks file size, strings and where its downloaded from to see if a mod has a injection."
+      }
+      {
+        "title": "GersBes Download Checker",
+        "text": "A powersehll script I made which checks download location which can be used if a hack client was downloaded from their own website."
+      }
+    ]
   },
 
   thumbnails: {
