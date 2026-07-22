@@ -1,0 +1,245 @@
+========================================================================
+ GersBes — Minecraft Staffing Website — INSTRUCTIONS
+========================================================================
+
+HOW TO OPEN THE SITE
+--------------------
+1. Unzip this folder anywhere on your computer.
+2. Double-click "index.html". It opens in your browser and the site
+   works fully offline (the 3D skin, both themes, the editor — everything).
+
+
+THE HOMEPAGE SKIN — SCROLL TO GROW, THEN EXPLORE
+-----------------------------------------------------
+When you land on the homepage, your skin starts small. As you scroll,
+it grows bigger in place (the page doesn't scroll past it yet) until
+it reaches full size — then the arrow buttons ( ‹ › ) and the dots
+fade in underneath it. Keep scrolling and the page continues normally
+into the About section.
+
+The skin sits at a slight angle with a soft shadow underneath for a
+more "grounded", 3D look, and is noticeably bigger than before.
+
+Once revealed, clicking an arrow (or a dot) turns the skin to a new
+angle AND smoothly crossfades to a different skin + a different accent
+gradient color for the whole site, matching that slide — cycling
+through Staffing, SSing, Thumbnails, and Reviews. You can also
+click-and-drag the skin itself to spin it manually.
+
+Each of your 4 subpages also carries its own matching accent color —
+so if someone visits ssing.html directly (not through the homepage),
+the site still uses SSing's color scheme, and so on.
+
+These slides (including which skin and colors each one uses) come
+from "home.highlights" in content.js — or, easier, from the "Manage
+Skins & Slides" button in the in-site editor (see below).
+
+
+THE IN-SITE EDITOR (no code, right in the browser)
+------------------------------------------------------
+Click the small glowing dot next to your site name in the top-left of
+the navbar. A box titled "THE EDITOR" appears with an "UNLOCK EDITOR"
+button — click that button 5 times in a row to reveal the dashboard.
+
+There's no password. This is intentional — a password baked into a
+static site's own code isn't real security anyway (anyone can view
+the page source and find it), so instead there's just a small bit of
+friction to stop random visitors from stumbling into it by accident.
+Nothing done in the editor changes your LIVE site either way — see
+"HOW PUBLISHING ACTUALLY WORKS" below.
+
+Once unlocked, the dashboard shows:
+
+  - SKINS card       -> preview of your 4 carousel slides + a
+                         "Manage Skins & Slides" button to add/edit/
+                         delete them (skin file, link, accent colors)
+  - SERVERS card     -> preview list + "Manage Servers" button
+                         (shown on the Staffing page)
+  - REVIEWS card     -> preview of your Discord button + "Edit Reviews
+                         Button" to change its text/link
+  - THUMBNAILS card  -> preview of your gallery + "Manage Gallery &
+                         Order Button" — add images (including
+                         uploading a picture straight from your
+                         computer), remove them, and edit the
+                         "Order one!" button's text/link
+
+Below those:
+  - Edit Site Text     -> site name, tagline, hero text, about text,
+                           every subpage's title/intro, and each
+                           subpage's accent colors
+  - Advanced (all data) -> raw view of EVERYTHING (social links, the
+                           SSing items list, the staffing timeline)
+                           for full control
+  - Export content.js   -> downloads your edited data as a ready-to
+                           -use content.js file
+  - Exit Edit Mode       -> closes the editor (click the dot + button
+                           5 times again next time)
+
+
+HOW PUBLISHING ACTUALLY WORKS:
+This is a plain static website with no server or database behind it.
+Changes you make in the editor are saved in THIS BROWSER ONLY, so only
+you (on this device) will see them while you're working — visitors to
+your live site won't see them yet.
+
+To make your edits visible to everyone:
+  1. Make your changes using the editor.
+  2. Click "Export content.js" in the dashboard — this downloads the
+     updated file.
+  3. Go to your GitHub repository, open js/content.js, click the pencil
+     (edit) icon, delete everything, and paste in the contents of the
+     file you just downloaded (open it in Notepad/VS Code to copy it).
+  4. Commit the change. Your live site updates within a minute or two.
+
+You can also skip the editor entirely and just edit js/content.js by
+hand exactly as before — both methods work and can be mixed freely.
+
+A NOTE ON UPLOADED GALLERY IMAGES: when you upload a picture in the
+Thumbnails manager, it's stored directly inside content.js as image
+data (no separate image file needed) — this works great, but very
+large photos will make content.js (and your page load) bigger. For
+best results, resize/compress photos to a reasonable size before
+uploading if they're huge (a few hundred KB is plenty for web use).
+
+
+HOW TO EDIT YOUR SITE MANUALLY (NO HTML NEEDED)
+--------------------------------------------------
+Everything you'll ever want to change — text, links, server names,
+server addresses, icons, gallery images — also lives in ONE file:
+
+    js/content.js
+
+Open it with Notepad (Windows), TextEdit (Mac, in plain-text mode),
+or any code editor like VS Code (free, recommended: vscode.dev works
+in browser). Do NOT use Microsoft Word.
+
+Inside content.js you'll see sections like this:
+
+    servers: [
+      {
+        name: "Example Network",
+        address: "play.example.net",
+        icon: "assets/icons/server-example.png",
+        description: "Crystal PVP focused server.",
+        link: "https://example.net",
+      },
+    ],
+
+To change something, just edit the text between the quotes " ".
+To ADD another server, copy one whole { ... } block (including the
+commas) and paste it above or below, then edit the text inside.
+To REMOVE one, delete its whole { ... } block.
+
+Save the file, refresh the page in your browser — your changes
+appear immediately.
+
+RULES TO AVOID BREAKING IT:
+  - Never delete a comma "," at the end of a line unless it's the
+    very last item in a list.
+  - Always keep matching quotes " " and curly brackets { }.
+  - If something breaks, undo your last change (Ctrl+Z) and try again.
+
+
+WHAT EACH SECTION IN content.js CONTROLS
+------------------------------------------
+  general       -> site name, tagline, your Minecraft username,
+                    default skin file, default theme, footer text
+  socialLinks   -> the icon(s) in the navbar/footer — currently just
+                    Discord
+  servers       -> the server cards shown on the Staffing page
+  home          -> homepage hero text, about text, and the 4 carousel
+                    slides (home.highlights) — each with its own skin,
+                    link, and accent color
+  staffing      -> the Staffing page title/intro/accent colors + your
+                    staff timeline
+  ssing         -> the SSing page title/intro/accent colors + its list
+                    of items
+  thumbnails    -> your thumbnail/logo gallery (images of any size)
+                    plus the "Order one!" button text/link
+  reviews       -> the Reviews page title/intro/accent colors, and the
+                    button text/link that points at your Discord
+
+
+CHANGING YOUR MINECRAFT SKINS
+--------------------------------
+Your site uses 4 skins — one per homepage carousel slide (which also
+means one per subpage):
+
+    assets/skins/skin-staffing.png    (Staffing slide)
+    assets/skins/skin-ssing.png       (SSing slide)
+    assets/skins/skin-thumbnails.png  (Thumbnails slide)
+    assets/skins/skin-reviews.png     (Reviews slide)
+
+To swap any of them, get a 64x64 PNG skin file (e.g. exported from the
+Minecraft launcher, or downloaded from a site like namemc.com) and
+replace the matching file above — keep the exact same file name. You
+can also point a slide at a completely different file path by editing
+its "skin" field in content.js (or via "Manage Skins & Slides" in the
+in-site editor).
+
+
+YOUR DISCORD LINK
+--------------------
+Your Discord invite (https://discord.gg/vdvTtSDM3P) is used in three
+places: the navbar/footer social icon, the Reviews page button, and
+the Thumbnails page's "Order one!" button. If your invite link ever
+changes, update it in all three spots — socialLinks, reviews.buttonLink,
+and thumbnails.orderButtonLink in content.js (or via the editor).
+
+
+ADDING ICONS / IMAGES
+------------------------
+Drop any .png or .jpg file into the "assets" folder (or the
+"assets/icons" subfolder for small icons), then reference it in
+content.js exactly like the existing examples, e.g.:
+
+    icon: "assets/icons/myserver.png"
+
+For the Thumbnails gallery specifically, images can be any size or
+shape — they display at their natural proportions in a flowing grid,
+nothing gets cropped or squished.
+
+
+LIGHT / DARK MODE
+--------------------
+Visitors can toggle it with the sun/moon button in the navbar — their
+choice is remembered automatically. You can set which theme loads
+first for new visitors via general.defaultTheme ("dark" or "light")
+in content.js.
+
+
+PUTTING IT ONLINE (OPTIONAL, FREE, RECOMMENDED)
+--------------------------------------------------
+The simplest free option is GitHub Pages:
+  1. Create a free GitHub account (github.com) if you don't have one.
+  2. Create a new repository, upload every file/folder from this zip
+     into it (drag-and-drop works in the GitHub website).
+  3. Go to the repository's Settings -> Pages -> set "Source" to your
+     main branch -> Save.
+  4. GitHub gives you a free link like
+     https://yourusername.github.io/your-repo-name/
+     Your site is now live and editable — just edit content.js
+     directly in the GitHub website (or use the in-site editor's
+     "Export content.js" button and paste the result in) and your
+     live site updates automatically.
+
+Other free options that also work: Netlify Drop (netlify.com/drop —
+drag the folder in, get an instant link), or Cloudflare Pages.
+
+
+FILE STRUCTURE OVERVIEW
+--------------------------
+index.html          - Home page (grow-on-scroll skin carousel)
+staffing.html        - Staffing subpage
+ssing.html            - SSing subpage
+thumbnails.html       - Thumbnail/Logo Creation subpage (gallery + Order button)
+reviews.html          - Reviews subpage (just a Discord button)
+css/style.css         - All visual styling (colors, layout, animations)
+js/content.js         - Editable content — the file to hand-edit
+js/editor.js          - The in-site editor (dot + click "UNLOCK EDITOR" 5x)
+js/main.js            - Site logic (nav, theme, carousel, animations)
+js/lib/skinview3d.bundle.js - 3D skin rendering library (don't edit)
+assets/skins/           - Your 4 Minecraft skin textures (one per slide)
+assets/icons/          - Favicon + server icons
+
+Enjoy the site!

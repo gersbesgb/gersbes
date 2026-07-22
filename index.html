@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GersBes — Minecraft Staffing</title>
+<link rel="icon" href="assets/icons/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="index.html">
+
+<header class="navbar" id="siteNav"></header>
+
+<main>
+  <section class="hero" id="heroSection">
+    <div class="hero-pin" id="heroPin">
+      <div class="container hero-inner">
+        <div class="hero-heading reveal">
+          <span class="hero-tag">Minecraft • Staff • Creative</span>
+          <h1 class="hero-title" id="heroTitle">GersBes</h1>
+          <p class="hero-subtitle" id="heroSubtitle">Minecraft Staff, Servers &amp; Creative Work</p>
+          <a class="btn" id="heroBtn" href="staffing.html">View Staffing</a>
+        </div>
+
+        <div class="carousel-stage-wrap">
+          <button class="arrow arrow-left" id="carouselPrev" type="button" aria-label="Previous">&#10094;</button>
+
+          <div class="carousel-stage" id="carouselStage">
+            <div class="skin-glow"></div>
+            <div id="skin_container">
+              <canvas id="skin_canvas"></canvas>
+            </div>
+            <div class="skin-shadow"></div>
+          </div>
+
+          <button class="arrow arrow-right" id="carouselNext" type="button" aria-label="Next">&#10095;</button>
+        </div>
+
+        <div class="carousel-dots-wrap" id="carouselDotsWrap">
+          <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+
+        <div class="grow-hint" id="growHint"><span></span>SCROLL</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 id="aboutTitle">About Me</h2>
+        <p id="aboutText">Edit this text in content.js</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="siteFooter"></footer>
+
+<script src="js/lib/skinview3d.bundle.js"></script>
+<script src="js/content.js"></script>
+<script src="js/editor.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
